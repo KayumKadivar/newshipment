@@ -20,6 +20,8 @@ import {
   type RouteLocation,
 } from "../lib/googleRoutes";
 import { shipmentDataSource, type ShipmentRecord } from "./shipmentData";
+import DocumentTab from "./Document";
+import AuditTab from "./Audit";
 
 const apiKeyPlaceholder = "PASTE_YOUR_GOOGLE_MAPS_API_KEY_HERE";
 const googleLibraries: Libraries = ["marker", "places", "routes"];
@@ -323,6 +325,7 @@ function ShipmentRouteMap({ shipment }: { shipment: ShipmentRecord }) {
 function ShipmentDetail() {
   const { shipmentId } = useParams();
   const navigate = useNavigate();
+  const [activeTab, setActiveTab] = useState("Details");
   const shipment = shipmentDataSource.find((item) => item.key === shipmentId);
 
   if (!shipment) {
@@ -385,7 +388,8 @@ function ShipmentDetail() {
             <button
               key={tab}
               type='button'
-              className={tab === "Details" ? "active" : ""}>
+              onClick={() => setActiveTab(tab)}
+              className={tab === activeTab ? "active" : ""}>
               {tab}
             </button>
           ),
@@ -427,8 +431,10 @@ function ShipmentDetail() {
         </aside>
 
         <main className='shipment-detail-main'>
-          <div className='shipment-detail-grid'>
-            <DetailCard title='Pickup'>
+          {activeTab === "Details" && (
+            <>
+              <div className='shipment-detail-grid'>
+                <DetailCard title='Pickup'>
               <DetailField
                 label='Company name'
                 value={`${customer} Warehouse`}
@@ -512,8 +518,12 @@ function ShipmentDetail() {
                 label='Delivery Note'
                 value={`PO# ${shipment.customerNo}`}
               />
-            </DetailCard>
-          </div>
+                </DetailCard>
+              </div>
+            </>
+          )}
+          {activeTab === "Documents" && <DocumentTab />}
+          {activeTab === "Audit" && <AuditTab />}
         </main>
       </div>
     </section>

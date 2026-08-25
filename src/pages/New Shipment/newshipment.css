@@ -1,0 +1,376 @@
+/* ── Container ── */
+.new-shipment-container {
+  padding: 20px 30px;
+  background-color: #f8f9fa;
+  min-height: 100vh;
+  color: #333;
+}
+
+.new-shipment-container .ant-card-head {
+  background-color: #E2E5EC;
+  border: 1px solid #CFD1D6;
+  min-height: 44px;
+  padding: 0 16px;
+}
+
+.new-shipment-container .ant-card-head-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a1a;
+  padding: 10px 0;
+}
+
+.new-shipment-container .ant-card-body {
+  padding: 12px 16px;
+}
+
+/* ── Global Form Spacing (all cards) ── */
+.new-shipment-container .ant-form-item {
+  margin-bottom: 10px;
+}
+
+.new-shipment-container .ant-form-item-label {
+  padding-bottom: 3px !important;
+}
+
+.new-shipment-container .ant-form-item-label > label {
+  font-size: 14px;
+  color: #666;
+  font-weight: 500;
+  height: auto;
+}
+
+
+.add-master-btn {
+  color: #888  !important;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 0;
+}
+.add-master-btn:hover {
+  color: #d46b08 !important;
+}
+
+/* ═══════════════════════════════════════════════
+   PAGE HEADER
+═══════════════════════════════════════════════ */
+.ns-page-header {
+  margin-bottom: 16px;
+}
+.ns-page-title {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.ns-credit-limit {
+  background: #f0f0f0;
+  padding: 2px 8px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+/* ═══════════════════════════════════════════════
+   TOP SECTION (Section 1+2)
+═══════════════════════════════════════════════ */
+.ns-top-row {
+  margin-bottom: 16px;
+}
+.ns-left-col {
+  height: 100%;
+}
+
+.notes-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.notes-panel .ant-card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+}
+.notes-textarea {
+  flex: 1;
+  resize: none;
+  min-height: 140px;
+}
+.ns-notes-icon {
+  font-size: 11px;
+}
+
+/* ═══════════════════════════════════════════════
+   PRODUCT TABLE (Section 3)
+═══════════════════════════════════════════════ */
+.ns-product-card {
+  margin-bottom: 16px;
+}
+.product-panel .ant-card-body {
+  padding: 0;
+}
+.ns-product-extra {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.product-table-wrapper {
+  overflow-x: auto;
+  width: 100%;
+}
+.product-table {
+  min-width: 1200px;
+}
+
+.rate-table-wrapper {
+  overflow-x: auto;
+  width: 100%;
+}
+
+.rate-table-content {
+  min-width: 400px;
+}
+
+.product-header-row {
+  display: flex;
+  padding: 10px 16px;
+  border-bottom: 1px solid #e0e0e0;
+  background-color: #fafafa;
+  font-size: 10px;
+  font-weight: 700;
+  color: #888;
+  text-transform: uppercase;
+  gap: 12px;
+}
+
+.product-input-row {
+  display: flex;
+  padding: 12px 16px;
+  gap: 12px;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+}
+
+.product-summary-row {
+  display: flex;
+  padding: 10px 16px;
+  gap: 12px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #333;
+  background-color: #f0f0f0;
+}
+
+/* Column widths */
+.col-24  { width: 24px;  flex-shrink: 0; }
+.col-60  { width: 60px;  flex-shrink: 0; }
+.col-70  { width: 70px;  flex-shrink: 0; }
+.col-80  { width: 80px;  flex-shrink: 0; }
+.col-100 { width: 100px; flex-shrink: 0; }
+.col-180 { width: 180px; flex-shrink: 0; }
+.col-flex-1 { flex: 1; min-width: 150px; }
+
+.text-center { text-align: center; }
+.text-right  { text-align: right; }
+.flex-center { display: flex; justify-content: center; }
+
+.input-center { text-align: center; }
+.input-right  { text-align: right; }
+
+.dim-input {
+  width: 45px;
+  text-align: center;
+  padding: 4px;
+}
+
+.unit-text {
+  font-size: 12px;
+  color: #666;
+  white-space: nowrap;
+}
+
+.ns-row-delete-btn {
+  color: #888;
+}
+
+.ns-add-line-wrap {
+  padding: 10px 16px;
+}
+
+.ns-add-line-btn {
+  padding: 0;
+  font-weight: 500;
+}
+
+.product-panel .ant-segmented-item-selected {
+  background-color: #000 !important;
+  color: #fff !important;
+}
+.product-panel .ant-segmented-item-selected .ant-segmented-item-label {
+  color: #fff !important;
+}
+
+/* ═══════════════════════════════════════════════
+   BOTTOM SECTION (Section 4)
+═══════════════════════════════════════════════ */
+.ns-bottom-row {
+  margin-bottom: 16px;
+}
+
+.insurance-panel {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.insurance-panel .ant-card-body {
+  flex: 1;
+}
+
+.ns-insurance-icon {
+  font-size: 11px;
+  margin-left: 4px;
+}
+
+.ns-internal-col {
+  height: 100%;
+}
+
+.internal-notes-panel {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.internal-notes-panel .ant-card-body {
+  flex: 1;
+}
+
+.internal-notes-panle-footer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+
+/* ── Footer ── */
+
+.btn-outline {
+  color: #666;
+  border-color: #ddd;
+  background-color: white;
+}
+
+/* Error input */
+.error-input {
+  background-color: #E2E5EC !important;
+  border-color: #CFD1D6 !important;
+}
+
+.error-input:hover,
+.error-input:focus {
+  border-color: #CFD1D6 !important;
+}
+
+/* ═══════════════════════════════════════════════
+   CUSTOMER RATE
+═══════════════════════════════════════════════ */
+.w-100 { width: 100%; }
+
+.btn-success {
+  background-color: #28a745;
+  border-color: #28a745;
+  width: 100%;
+}
+
+.btn-success:hover,
+.btn-success:focus {
+  background-color: #218838 !important;
+  border-color: #1e7e34 !important;
+}
+
+.btn-warning {
+  background-color: #fd7e14;
+  border-color: #fd7e14;
+  width: 100%;
+  color: white;
+}
+
+.btn-warning:hover,
+.btn-warning:focus {
+  background-color: #e86e04 !important;
+  border-color: #d86603 !important;
+  color: white !important;
+}
+
+.rate-header-row {
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  padding: 8px 16px;
+  font-size: 10px;
+  font-weight: 700;
+  gap: 12px;
+}
+.rate-empty-state {
+  padding: 24px;
+  text-align: center;
+  color: #888;
+  font-size: 12px;
+  border-bottom: 1px solid #eee;
+}
+
+/* ═══════════════════════════════════════════════
+   INTERNAL NOTES
+═══════════════════════════════════════════════ */
+.resize-none { resize: none; }
+.w-min-80    { min-width: 80px; }
+
+/* ═══════════════════════════════════════════════
+   CUSTOMER RATE – Utility classes
+═══════════════════════════════════════════════ */
+
+/* Spacing */
+.mb-8  { margin-bottom: 8px; }
+.mb-12 { margin-bottom: 12px; }
+.mb-16 { margin-bottom: 16px; }
+.mt-16 { margin-top: 16px; }
+
+/* Flex utilities */
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex-align-center {
+  display: flex;
+  align-items: center;
+}
+
+.gap-8 { gap: 8px; }
+
+/* Text utilities */
+.text-muted-13 {
+  font-size: 13px;
+  color: #666;
+}
+
+.text-dark-13 {
+  font-size: 13px;
+  color: #333;
+  font-weight: 700;
+}
+
+/* Mark Up input */
+.input-sm-center {
+  width: 60px;
+  text-align: center;
+}
+
+/* Rate totals row */
+.rate-total-row {
+  font-size: 14px;
+  font-weight: 700;
+  color: #333;
+}

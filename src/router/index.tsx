@@ -14,6 +14,7 @@ import NotFound from "../pages/NotFound.tsx";
 import Rate from "../pages/Rate.tsx";
 import Shipment from "../pages/Shipment.tsx";
 import ShipmentDetail from "../pages/ShipmentDetail.tsx";
+import NewShipment from "../pages/New Shipment/NewShipment.tsx";
 
 type AppRouterProps = {
   customerLocations: CustomerLocation[];
@@ -36,6 +37,7 @@ export default function AppRouter({
     <Routes>
       <Route path='/' element={<Home />} />
       <Route path='/shipments' element={<Shipment />} />
+      <Route path="/shipments/new" element={<NewShipment />} />
       <Route path='/shipments/:shipmentId' element={<ShipmentDetail />} />
       {/* <Route path='/about' element={<About />} /> */}
       <Route path='/quotes' element={<NewQuote />} />

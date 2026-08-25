@@ -1,5 +1,5 @@
 import { ConfigProvider, Layout, message, theme, type ThemeConfig } from "antd";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./App.css";
 import { useAppDispatch, useAppSelector } from "./app/hooks.ts";
@@ -16,6 +16,9 @@ import {
 import Login from "./pages/Login.tsx";
 import AppRouter from "./router/index.tsx";
 import { login, logout } from "./store/appSlice.ts";
+import { useDispatch } from "react-redux";
+import type { AppDispatch } from "./app/store";
+import { fetchAccessorials } from "./store/accessorialsSlice";
 
 const { Content } = Layout;
 
@@ -45,9 +48,7 @@ const antTheme: ThemeConfig = {
 
 function App() {
   const [collapsed, setCollapsed] = useState(false);
-  const isAuthenticated = useAppSelector(
-    (state) => state.app.isAuthenticated,
-  );
+  const isAuthenticated = useAppSelector((state) => state.app.isAuthenticated);
   const [customerLocations, setCustomerLocations] = useState<
     CustomerLocation[]
   >(cloneCustomerLocationSeed);
@@ -55,8 +56,14 @@ function App() {
     cloneCustomerProductSeed,
   );
   const [messageApi, messageContext] = message.useMessage();
-  const dispatch = useAppDispatch();
-  const navigate = useNavigate();
+   const navigate = useNavigate();
+  const dispatch = useDispatch<AppDispatch>();
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      dispatch(fetchAccessorials());
+    }
+  }, [isAuthenticated, dispatch]);
 
   const handleLogout = () => {
     dispatch(logout());

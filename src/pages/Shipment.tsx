@@ -82,7 +82,7 @@ function Shipment() {
         <Space wrap>
           <Button icon={<ReloadOutlined />}>Refresh</Button>
           <Button icon={<ClockCircleOutlined />}>Quick Quote</Button>
-          <Button type="primary">+ New Shipment</Button>
+          <Button type="primary" onClick={() => navigate("/shipments/new")}>+ New Shipment</Button>
         </Space>
       </div>
 

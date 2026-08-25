@@ -4597,3 +4597,18 @@ body {
     flex-wrap: wrap;
   }
 }
+
+.action-arrow-icon {
+  color: #ef4444;
+  transform: rotate(45deg);
+  margin-left: 6px;
+  font-size: 12px;
+}
+
+
+.audit-action-cell {
+  display: flex;
+  align-items: center;
+  color: #111;
+  font-weight: 600;
+}

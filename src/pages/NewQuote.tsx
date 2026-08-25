@@ -366,7 +366,7 @@ function NewQuote() {
             ))}
           </div>
 
-          <div className='new-quote-lower-grid'>
+          {/* <div className='new-quote-lower-grid'>
             <section className='new-quote-card quote-customer-card'>
               <header className='new-quote-card__header'>
                 <h2>Customer Information</h2>
@@ -401,7 +401,7 @@ function NewQuote() {
                 See Rates
               </Button>
             </div>
-          </div>
+          </div> */}
         </main>
 
         <aside className='new-quote-aside'>
