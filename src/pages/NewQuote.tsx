@@ -203,6 +203,24 @@ function NewQuote() {
         <button className='new-quote-back' type='button'>
           &larr; All Quotes
         </button>
+
+        <div className='new-quote-page__top-filters'>
+          <Select
+            className='new-quote-customer-select'
+            defaultValue='Inland Transport Buy Rates'
+            options={[{ value: 'Inland Transport Buy Rates', label: 'Inland Transport Buy Rates' }]}
+            placeholder='Customer'
+            aria-label='Customer rate source'
+          />
+          <Input className='new-quote-carrier-input' placeholder='Carrier' aria-label='Carrier' />
+          <Select
+            className='new-quote-top-select'
+            defaultValue='10'
+            options={[{ value: '10', label: 'Top 10' }, { value: '20', label: 'Top 20' }]}
+            aria-label='Get top rates'
+          />
+        </div>
+
         <div className='new-quote-page__top-actions'>
           <Button danger>Cancel Quote</Button>
           <Button>Save Quote</Button>

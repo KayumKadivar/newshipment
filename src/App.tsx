@@ -19,6 +19,7 @@ import { login, logout } from "./store/appSlice.ts";
 import { useDispatch } from "react-redux";
 import type { AppDispatch } from "./app/store";
 import { fetchAccessorials } from "./store/accessorialsSlice";
+import { saveCustomerProduct } from "./store/customerProductSlice.ts";
 
 const { Content } = Layout;
 
@@ -84,13 +85,30 @@ function App() {
     messageApi.success("Location added");
   };
 
-  const handleCreateProduct = (values: Omit<CustomerProduct, "key">) => {
-    setCustomerProducts((current) => [
-      { ...values, key: `product-${Date.now()}` },
-      ...current,
-    ]);
-    navigate("/customer-products");
-    messageApi.success("Product added");
+  const handleCreateProduct = async (values: Omit<CustomerProduct, "key">) => {
+    try {
+      // Hit localhost API via Redux Toolkit
+      await dispatch(saveCustomerProduct(values)).unwrap();
+      
+      // Update local state and UI
+      setCustomerProducts((current) => [
+        { ...values, key: `product-${Date.now()}` },
+        ...current,
+      ]);
+      navigate("/customer-products");
+      messageApi.success("Product saved and added successfully");
+    } catch (error) {
+      // Even if API fails, update UI for demo purposes or show error.
+      // Assuming we want to show error but still add it locally if it's a demo
+      messageApi.error(`API Error: ${error}`);
+      
+      // Remove or keep the local fallback depending on your actual need:
+      setCustomerProducts((current) => [
+        { ...values, key: `product-${Date.now()}` },
+        ...current,
+      ]);
+      navigate("/customer-products");
+    }
   };
 
   return (

@@ -541,6 +541,26 @@ body {
   gap: 16px;
 }
 
+.new-quote-page__top-filters {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: auto;
+  margin-right: 24px;
+}
+
+.new-quote-customer-select {
+  width: 240px;
+}
+
+.new-quote-carrier-input {
+  width: 140px;
+}
+
+.new-quote-top-select {
+  width: 100px;
+}
+
 .new-quote-back {
   padding: 0;
   border: 0;
